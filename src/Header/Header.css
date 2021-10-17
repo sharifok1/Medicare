@@ -1,0 +1,15 @@
+.baner-img{
+    width: 100%;
+}
+.banner{
+    background-image: url(./banner.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 400px;
+}
+.baner-txt{
+    padding: 50px;
+    padding-top: 80px;
+    display: block;
+}
