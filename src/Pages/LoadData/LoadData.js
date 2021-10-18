@@ -9,8 +9,7 @@ import { faEnvelope, faHeadset, faMapMarkerAlt } from '@fortawesome/free-solid-s
 
 const LoadData = () => {
     const [data, setData]=useState([]);
-    // useState for handler//
-    const [details,setDetails]=useState([])
+    
     useEffect(()=>{
         const url = 'WebFakeData.json';
         fetch(url)
@@ -25,6 +24,7 @@ const LoadData = () => {
             <div className='container mt-5'>
             <Row sm={1} className={Container}>
                 <Col lg={8}>
+                    <h1 className="text-secondary service-hed">Our Clinical Services</h1>
                    <Row xs={1} md={3} lg={3} className="g-4">
                    {
                        data.map(service=> <Services
@@ -40,8 +40,9 @@ const LoadData = () => {
             
             </Row>
         </div>
+
             <footer className="foter-style">
-                <Row >
+                <Row>
                     <Col md={5}>
                         <h3>MediCare Helth Service</h3>
                       <p><FontAwesomeIcon icon={faMapMarkerAlt}/> Road-9/B, Sector-5, Uttara, Dhaka</p> 

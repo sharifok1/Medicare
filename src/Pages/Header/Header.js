@@ -2,8 +2,10 @@ import React from 'react';
 import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import UseFirebase from '../../Hooks/UseFirebase';
 
 const Header = () => {
+    const{user,logOut}=UseFirebase()
     return (
         <div>
             {/* navbar///================ */}
@@ -16,11 +18,15 @@ const Header = () => {
                         <Nav.Link as={Link} to ='/'>Home</Nav.Link>
                         <Nav.Link as={Link} to ='/OurDoctors'>Doctors</Nav.Link>
                         <Nav.Link as={Link} to ='/AboutUs'>AboutUs</Nav.Link>
+                        {
+                        user.displayName?<Navbar.Text>
+                            {user.displayName}
+                            <button onClick={logOut}>LogOut</button>
+                          </Navbar.Text>
+                          :
                             <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-                            {/* <Link to="/LoginSite">LogOut</Link> */}
-                        <Navbar.Text>
-                            Signed in as: <a href="#login">Mark Otto</a>
-                        </Navbar.Text>
+                         }
+                            
                         </Navbar.Collapse>
                 
                 </Container>
@@ -29,7 +35,9 @@ const Header = () => {
             {/* baner======================= */}
             <div className="banner row" >
                 <div className="col-md-6 col-sm-4">
+
                 </div>
+
                 <div className="baner-txt col-md-6 col-sm-8">
                 <h3>Your Health is our priority</h3>
                 <h1>MediCare Helth Service</h1>

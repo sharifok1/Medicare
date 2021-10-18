@@ -1,0 +1,35 @@
+.doctor-img{
+    height: 220px;
+}
+/* .doctor-profile{
+    transition:1s;
+}
+.doctor-profile:hover{
+    background-color: chartreuse;
+} */
+.card-width {
+    position: relative;
+    z-index: 1;
+}
+.card-width::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+    background: rgb(255, 208, 0);
+    z-index: -1;
+    transition: transform 1s;
+}
+.card-width:hover::after {
+    transform: scaleY(1);
+}
+
+@media only screen and (max-width:688px){
+    .card-width{
+        margin: 0 50px 0 50px;
+    }
+}

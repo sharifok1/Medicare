@@ -1,0 +1,12 @@
+.seeMore{
+    border-radius: 10px;
+    padding: 5px;
+    padding-left:10px ;
+    padding-right:10px ;
+    border: hidden;
+    border:1px solid black;
+    background-color: aquamarine;
+}
+.seeMore:hover{
+    background-color: rgb(224, 119, 34); 
+}

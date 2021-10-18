@@ -1,6 +1,4 @@
-.baner-img{
-    width: auto;
-}
+
 .banner{
     background-image: url(./banner.jpg);
     background-repeat: no-repeat, repeat;
@@ -8,6 +6,7 @@
     display: flex;
     min-height: 400px;
     margin-top: 55px;
+    margin: 0;
     
 }
 .baner-txt{

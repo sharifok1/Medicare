@@ -1,0 +1,14 @@
+.page404{
+    background-image: url(https://image.freepik.com/free-vector/error-404-concept-landing-page_23-2148246764.jpg);
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 400px;
+    margin-top: 55px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+.go-to-home{
+    margin-top: 280px;
+}

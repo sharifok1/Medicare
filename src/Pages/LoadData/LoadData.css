@@ -1,4 +1,6 @@
+
 .foter-style{
+   
     background-color: #0f205b;
     color:aliceblue;
     padding: 20px 0 20px 0;
@@ -10,4 +12,7 @@
 }
 .foter-txt{
     margin-bottom: -10px;
+}
+.service-hed{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
