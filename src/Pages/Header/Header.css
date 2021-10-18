@@ -1,5 +1,5 @@
 .baner-img{
-    width: 100%;
+    width: auto;
 }
 .banner{
     background-image: url(./banner.jpg);
@@ -7,6 +7,8 @@
     background-size: cover;
     display: flex;
     min-height: 400px;
+    margin-top: 55px;
+    
 }
 .baner-txt{
     padding: 50px;

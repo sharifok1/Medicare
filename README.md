@@ -1,6 +1,6 @@
 # MediCare Service Center
 ------------------------------
-This project deeloped  by react farmwork
+This project developed  by react farmwork
 
 ## What are avilable in this Project?
 -----------------------------------------

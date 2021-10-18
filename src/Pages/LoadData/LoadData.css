@@ -1,0 +1,13 @@
+.foter-style{
+    background-color: #0f205b;
+    color:aliceblue;
+    padding: 20px 0 20px 0;
+    margin-top: 50px;
+}
+.payment-card{
+    max-height: 150px;
+    padding: 25px;
+}
+.foter-txt{
+    margin-bottom: -10px;
+}
