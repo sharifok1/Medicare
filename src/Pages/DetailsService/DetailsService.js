@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 
 const DetailsService = () => {
     const {serviceId}=useParams();
-    console.log(useParams())
+    // console.log(useParams())
    
     return (
         <div>

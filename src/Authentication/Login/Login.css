@@ -50,6 +50,10 @@ input{
     background-color:rgba(245, 107, 43, 0.37);
     border:1px solid rgba(61, 24, 7, 0.692);
 }
+.provider:hover{
+    background-color:rgba(51, 177, 39, 0.582);
+    font-weight: 500;
+}
 .new-accunt-sugg{
     font-size: 20px;
     color:black;

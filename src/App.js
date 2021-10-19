@@ -22,7 +22,7 @@ function App() {
            <Route exact path='/'>
               <LoadData></LoadData>
            </Route>
-           <Route path='/LoadData'>
+           <Route path='/Home'>
               <LoadData></LoadData>
            </Route>
 

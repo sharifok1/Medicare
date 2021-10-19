@@ -4,8 +4,10 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import UseFirebase from '../../Hooks/UseFirebase';
 import { HashLink } from 'react-router-hash-link';
 
-const Header = () => {
-    const{user,logOut}=UseFirebase()
+const Header = ({users}) => {
+    // const {users}=props;
+    
+    const{user,logOut}=UseFirebase();
     return (
         <div>
             {/* navbar///================ */}
@@ -15,13 +17,13 @@ const Header = () => {
                
                     <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={HashLink} to ='/#Home'>Home</Nav.Link>
+                        <Nav.Link as={HashLink} to ='/Home'>Home</Nav.Link>
                         <Nav.Link as={HashLink} to ='/OurDoctors#OurDoctors'>Doctors</Nav.Link>
                         <Nav.Link as={HashLink} to ='/AboutUs#AboutUs'>AboutUs</Nav.Link>
                         {
                         user.displayName?<Navbar.Text>
                             {user.displayName}
-                            <button onClick={logOut}>LogOut</button>
+                            <button className='ms-2 bg-warning logOut' onClick={logOut}><i class="fas fa-sign-out-alt"></i></button>
                           </Navbar.Text>
                           :
                             <Nav.Link as={HashLink} to="/Login">Login</Nav.Link>

@@ -17,10 +17,7 @@ const UseFirebase = () => {
       return  signInWithPopup(auth, googleProvider)
 
         
-    }
-    // //Email password signin function========================//
-    //   });
-    
+    }  
     //signout handler=======================================//
     const logOut=()=>{ 
         setIsloading(true)     

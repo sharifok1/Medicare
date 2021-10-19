@@ -1,5 +1,5 @@
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from 'react';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from 'react-router-dom';
 import UseAuth from '../../Hooks/UseAuth';
 import firebaseInitialization from '../Firebase/Firebase.Initialize';
@@ -9,20 +9,24 @@ const Registration = () => {
     const{googleSignin}=UseAuth()
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
-
-    // ===================onsubmit/registration handler///
+    const [error,setError]=useState('')
+    const [success,setSuccess]=useState('')
+    // ==========================================onsubmit/registration handler///
     const registrationHandler=(e)=>{
         e.preventDefault()
-        console.log(email,password);   
-        signInWithEmailAndPassword(auth, email, password)
-        .then((result) => {
-        const user = result.user;
-        console.log(user)
-  })
-  .catch((error) => {
-    
-  });
-
+        console.log('email:',email, 'password:',password)
+        if(password.length<6){
+            return setError('Your Password should be at least 6 characters long');
+        }
+        if(!/(?=(.*[A-Z]){2})/.test(password)){
+           return setError('Password must contain 2 upper case')
+        }
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((result)=>{
+            setSuccess('Registration Successful')
+        }).catch(error=>{
+            setError(error.message);
+        })
     }
     // email handler//-------------------------//
     const emailHandler= (e)=>{
@@ -42,21 +46,31 @@ const Registration = () => {
             <div className="text-center d-flex justify-content-center">
             
             <form className="login-form" onSubmit={registrationHandler}>
-                <h2>Please Signup</h2>
-                <input type="Frirs-Name" placeholder="Frist-Name"/> <br />
-                <input type="Last-name" placeholder="Last-Nmae"/> <br />
-                <input onChange={emailHandler} type="email" placeholder="Email" required/> <br />  
-                <input onChange={passwordHandler} type="password" placeholder="Password" required /> <br />               
+                <h2><i class="fas fa-user-plus"></i> Please Signup</h2>
+                <label htmlFor="Frist-Name"></label>
+                <input type="Frirs-Name" placeholder="Frist-Name" id="Frist-Name"/> <br />
+               
+                <label htmlFor="Last-Nmae"></label>
+                <input type="Last-name" placeholder="Last-Nmae" id="Last-Nmae"/> <br />
+                
+                <label htmlFor="email"></label>
+                <input onChange={emailHandler} type="email" placeholder="Email" id="email" required/> <br />  
+                
+                <label htmlFor="password"></label>
+                <input onChange={passwordHandler} type="password" placeholder="Password" id="password" required /> <br />               
                 <input type="password" placeholder="retype-Password" required/> <br />
-                <input className="sub-btn" type="submit" value="SignUp"/>
+                <small className="text-danger">{error}</small> <br />
+                <span className="text-success">{success}</span> <br />
+                <label htmlFor="signUp"></label>
+                <input className="sub-btn" type="submit" value="SignUp" id="signUp"/>
             </form>
 
             </div>
              <p className="new-accunt-sugg">Already Have an account? please login<Link to="/Login" className="signup-btn">Login</Link></p>
                 <h2 className="mt-4 pt-4">--------------or--------------</h2>
 
-            <button className="provider" onClick={googleSignin}>Login With google</button> <br />
-            <button className="provider" onClick={googleSignin}>Login With Facebok</button>
+            <button className="provider" onClick={googleSignin}>Login With <i class="fab fa-google text-danger fs-4"></i>oogle</button> <br />
+            {/* <button className="provider" onClick={googleSignin}>Login With Facebok</button> */}
 
         </div>
         </div>
