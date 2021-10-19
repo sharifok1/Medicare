@@ -1,8 +1,8 @@
 import React from 'react';
 import './Header.css';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import UseFirebase from '../../Hooks/UseFirebase';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
     const{user,logOut}=UseFirebase()
@@ -11,20 +11,20 @@ const Header = () => {
             {/* navbar///================ */}
             <Navbar collapseOnSelect expand="lg"  bg="dark" variant="dark" fixed="top">
               <Container>
-                 <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                 <Navbar.Brand href="#home"><h1>MediCare</h1></Navbar.Brand>
                
                     <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">
-                        <Nav.Link as={Link} to ='/'>Home</Nav.Link>
-                        <Nav.Link as={Link} to ='/OurDoctors'>Doctors</Nav.Link>
-                        <Nav.Link as={Link} to ='/AboutUs'>AboutUs</Nav.Link>
+                        <Nav.Link as={HashLink} to ='/#Home'>Home</Nav.Link>
+                        <Nav.Link as={HashLink} to ='/OurDoctors#OurDoctors'>Doctors</Nav.Link>
+                        <Nav.Link as={HashLink} to ='/AboutUs#AboutUs'>AboutUs</Nav.Link>
                         {
                         user.displayName?<Navbar.Text>
                             {user.displayName}
                             <button onClick={logOut}>LogOut</button>
                           </Navbar.Text>
                           :
-                            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
+                            <Nav.Link as={HashLink} to="/Login">Login</Nav.Link>
                          }
                             
                         </Navbar.Collapse>
@@ -33,7 +33,7 @@ const Header = () => {
             </Navbar>
 
             {/* baner======================= */}
-            <div className="banner row" >
+            <div className="banner row " >
                 <div className="col-md-6 col-sm-4">
 
                 </div>

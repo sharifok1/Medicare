@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import "./Doctor.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faMobile, faMobileAlt, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope,  faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 
 const Doctor = ({doctorData}) => {
     const {name, img, email, phone}=doctorData;

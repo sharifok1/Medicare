@@ -1,4 +1,4 @@
-import { faClinicMedical, faEnvelope, faFirstAid, faHeadset, faHeart, faHeartbeat, faHeartBroken, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faClinicMedical, faEnvelope, faFirstAid, faHeadset, faHeartbeat, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';

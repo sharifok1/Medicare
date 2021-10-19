@@ -1,45 +1,55 @@
 import { useEffect, useState } from 'react';
-import {getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged } from "firebase/auth";
+import {getAuth, signInWithPopup, GoogleAuthProvider,signOut, onAuthStateChanged} from "firebase/auth";
 import firebaseInitialization from '../Authentication/Firebase/Firebase.Initialize';
 firebaseInitialization();
 
 const UseFirebase = () => {
 
     const [user,setUser]=useState({});
+    const [isLoading, setIsloading]=useState(true);
+
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
 
-    // google signin Handleer===========================//
+    // google signin function==============================//
     const googleSignin=()=>{
-        signInWithPopup(auth, googleProvider)
-        .then((result) => {
-            const user = result.user;
-            setUser(user)
-          }).catch((error) => {
-          });
+        setIsloading(true)
+      return  signInWithPopup(auth, googleProvider)
+
+        
     }
-    //signout handler===================================//
-    const logOut=()=>{      
-        signOut(auth).then(() => {
+    // //Email password signin function========================//
+    //   });
+    
+    //signout handler=======================================//
+    const logOut=()=>{ 
+        setIsloading(true)     
+        signOut(auth)
+        .then(() => {
             setUser({})
-        // Sign-out successful.
-        }).catch((error) => {
-        // An error happened.
-        });
+        }).finally(()=>{
+            setIsloading(false)
+        })
     }
-    // on Auth state change//
+    // on Auth state change==================================//
     useEffect(()=>{
         onAuthStateChanged(auth,(user)=>{
             if(user){
                 setUser(user)
             }
-        })
+            else{
+                setUser({})
+            }
+            setIsloading(false)
+        });
     },[])
     return (
             {
                 googleSignin,
                 user,
+                isLoading,
                 logOut,
+                
             }
     );
 };

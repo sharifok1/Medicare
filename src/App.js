@@ -1,6 +1,7 @@
 import { BrowserRouter as Router,Switch ,Route} from 'react-router-dom';
 import './App.css';
 import Login from './Authentication/Login/Login';
+import PrivateRoute from './Authentication/PrivateRoute/PrivateRoute';
 import Registration from './Authentication/Registration/Registration';
 import AuthProvider from './ContexAPI/AuthProvider';
 import AboutUs from './Pages/AuoutUs/AboutUs';
@@ -37,9 +38,9 @@ function App() {
            <Route path='/AboutUs'>
               <AboutUs></AboutUs>
            </Route>
-           <Route path='/DetailsService'>
+           <PrivateRoute path='/DetailsService/:serviceId'>
               <DetailsService></DetailsService>
-           </Route>
+           </PrivateRoute>
            <Route>
              <Notfound></Notfound>
            </Route>

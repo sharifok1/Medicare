@@ -6,13 +6,8 @@ import "./Services.css";
 
 
 const Services = (props) => {
-    const {name,img, sortDes}=props.service;
-
-    // detais handler function//
-     const detailsHandler = (service)=>{
-        
-        console.log(service)
-    }
+    const {id,name,img, sortDes}=props.service;
+    console.log('hi',id)
     return (
         <div>
            <Col>
@@ -23,7 +18,7 @@ const Services = (props) => {
                         <Card.Text className='text-style'>
                             {sortDes.slice(0,50)}...
                         </Card.Text>
-                        <Link to="/DetailsService" onClick={()=>detailsHandler(props.service)}>Details</Link>
+                        <Link to={`/DetailsService/${id}`}>Details</Link>
                     </Card.Body>
                 </Card>
             </Col>

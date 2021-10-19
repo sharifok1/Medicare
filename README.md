@@ -13,11 +13,11 @@ I included in this project are-
 - Included About section and descrive activites
 - Included Facebook authentication
 
-## Project live site
+## Project live site link
  https://sharp-lamarr-05486d.netlify.app/
 
 
- ## fell fre to know more information
+ ## To know more information feel free to knock me
  Md. Shariful Islam 
  B.Sc in Computer Science & Engineering
  
