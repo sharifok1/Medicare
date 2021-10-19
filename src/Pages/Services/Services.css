@@ -27,3 +27,7 @@
 .card-style:hover::after {
     transform: scalex(-1);
 }
+.details{
+    text-decoration: none;
+    
+}

@@ -18,7 +18,7 @@ const Services = (props) => {
                         <Card.Text className='text-style'>
                             {sortDes.slice(0,50)}...
                         </Card.Text>
-                        <Link to={`/DetailsService/${id}`}>Details</Link>
+                        <Link className="details" to={`/DetailsService/${id}`}><button className="btn btn-primary">Details</button></Link>
                     </Card.Body>
                 </Card>
             </Col>

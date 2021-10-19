@@ -23,7 +23,7 @@ const DetailsService = () => {
             <Col md={6}>
                 <h1>{name}</h1>
                 <p>{sortDes}</p>
-                <Link to="/Home">  Go to Home</Link>
+                <Link to="/Home" className="goHome"><button className="btn btn-primary">Go to Home</button></Link>
             </Col>
            </Row>
         </div>
