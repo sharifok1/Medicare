@@ -7,7 +7,7 @@ import "./Services.css";
 
 const Services = (props) => {
     const {id,name,img, sortDes}=props.service;
-    console.log('hi',id)
+    // console.log('hi',id)
     return (
         <div>
            <Col>
