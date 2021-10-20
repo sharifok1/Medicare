@@ -1,4 +1,4 @@
-// import React, { useEffect, useState } from 'react';
+
 import { Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -12,17 +12,19 @@ const DetailsService = () => {
     const {name,img,sortDes}=itemsId;
    
     return (
-        <div className="container">
+        <div className="container m-4 p-4">
            <Row md={1} >       
             <Col md={6}>
              <Card className='card-style'>
                  <Card.Img className="img-height img-fluid" variant="top" src={img} />
                 </Card>
             </Col>
-            <Col md={6}>
+            <Col md={6} className="p-4" >
                 <h1>{name}</h1>
                 <p>{sortDes}</p>
-                <Link to="/Home" className="goHome"><button className="btn btn-primary">Go to Home</button></Link>
+               <div className="m-4 p-4">
+               <Link to="/Home" ><button className="btn btn-primary">Go to Home</button></Link>
+               </div>
             </Col>
            </Row>
         </div>

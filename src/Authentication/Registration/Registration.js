@@ -6,7 +6,8 @@ import firebaseInitialization from '../Firebase/Firebase.Initialize';
 firebaseInitialization()
 const auth = getAuth();
 const Registration = () => {
-    const{googleSignin}=UseAuth()
+    const{googleSignin,setUser}=UseAuth() //--------use Auth
+
     const [email,setEmail]=useState('') //----------email
     const [password,setPassword]=useState('') //----password
     const [error,setError]=useState('') //----------Error
@@ -16,7 +17,7 @@ const Registration = () => {
 
     console.log(firstName,lastName)
     // username update handelar--------------
-    const setUserName = ()=>{
+    const setUserInfo = ()=>{
         updateProfile(auth.currentUser,
             { displayName:firstName,firstName:firstName, lastNmae: lastName })
             .then(result =>{
@@ -44,7 +45,7 @@ const Registration = () => {
         setPassword(password);
     }
 
-        // ==========================================onsubmit/registration handler///
+        // =============================onsubmit/registration handler///
         const registrationHandler=(e)=>{
             e.preventDefault()
             console.log('email:',email, 'password:',password)
@@ -56,8 +57,10 @@ const Registration = () => {
             }
             createUserWithEmailAndPassword(auth, email, password)
             .then((result)=>{
-                setSuccess('Registration Successful');
-                setUserName();
+                setSuccess('Registration Successful,Please Login');
+                const user = result.user;
+                setUserInfo();
+                setUser({user});
             }).catch(error=>{
                 setError(error.message);
             })
@@ -74,8 +77,8 @@ const Registration = () => {
                 <label htmlFor="Frist-Name"></label>
                 <input onChange={firstNameHandler} type="Frirs-Name" placeholder="Frist-Name" id="Frist-Name"/> <br />
                
-                <label htmlFor="Last-Nmae"></label>
-                <input onChange={lastNameHandler} type="Last-name" placeholder="Last-Nmae" id="Last-Nmae"/> <br />
+                <label htmlFor="Last-Name"></label>
+                <input onChange={lastNameHandler} type="Last-name" placeholder="Last-Name" id="Last-Nmae"/> <br />
                 
                 <label htmlFor="email"></label>
                 <input onChange={emailHandler} type="email" placeholder="Email" id="email" required/> <br />  

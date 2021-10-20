@@ -13,7 +13,7 @@ const Header = () => {
             {/* navbar///================ */}
             <Navbar collapseOnSelect expand="lg"  bg="dark" variant="dark" fixed="top">
               <Container>
-                 <Navbar.Brand href="#home"><h1>MediCare</h1></Navbar.Brand>
+                 <Navbar.Brand className="brandNav" href="#home"><img className="logo" src="https://i.ibb.co/C8HN2qk/medilogo.png" alt="" /> <h1>MediCare</h1></Navbar.Brand>
                
                     <Navbar.Toggle />
                         <Navbar.Collapse className="justify-content-end">

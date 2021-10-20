@@ -18,9 +18,9 @@ const Login = () => {
     const location = useLocation()
     const history = useHistory()
 
-    //---------redirect route----------------------------
+    //---------redirect route google sign in----------------------------
     const Redirect_uri= location.state?.from || '/Home'
-    const googleLoginHandler=()=>{
+    const googleRedirectLogin=()=>{
         googleSignin()
         .then((result) => {
             history.push(Redirect_uri)
@@ -28,21 +28,31 @@ const Login = () => {
             setIsloading(false);
           })
     }
-   
+
+//---------redirect route Email password  login----------------------------
+    const Redirect = location.state?.from || '/Home';
+    const passwordRedirectLogin=(e)=>{
+      e.preventDefault()
+      setIsloading(true)
+      passworLoginHndler()
+      .then((result) => {
+        const user = result.user;
+        // setUser({user});
+        history.push(Redirect)
+       setSuccess('Successfully loged in')
+     }).finally(()=>{ setIsloading(false)})
+      .catch((error) => {
+      setError(error.message)
+        });
+    }
+
+
+
     // ------------------loginHandler======================
-   const loginHandler=(e)=>{
-   
-        e.preventDefault()
-        signInWithEmailAndPassword(auth, email, password)
-          .then((result) => {
-           const user = result.user;
-           setUser(user);
-          console.log(user);
-          setSuccess('Successfully loged in')
-        })
-        .catch((error) => {
-          setError(error.message)
-            });
+   const passworLoginHndler=(e)=>{
+    
+    setIsloading(true)
+      return  signInWithEmailAndPassword(auth, email, password)     
     }
 
     //---------------email handler-------------------//
@@ -51,27 +61,20 @@ const Login = () => {
         setEmail(email);
     }
     //-------------password handler------------------//
-    const passwordHandler=e =>{
+    const passwordHandler=(e) =>{
         const password = e.target.value;
         setPassword(password);
     }
-    //============onAuth state change=============
-    // useEffect(()=>{
-    //     onAuthStateChanged(auth, (user) => {
-    //         if (user) {
-    //          setUser({user})
-    //         } else {
-    //             setUser({})
-    //         }
-    //       });
-    // },[])
+  
+    //---------redirect route----------------------------
+   
 
 
     return (
         <div className="login-background">
             <div className="text-center d-flex justify-content-center">
-            <form onSubmit={loginHandler}  className="login-form">
-               
+         
+            <form onSubmit={passwordRedirectLogin}  className="login-form">              
              <h2><i className="fas fa-user"></i> Please Login</h2>
                 
                 <label htmlFor="email" ></label>
@@ -80,7 +83,7 @@ const Login = () => {
                 <label htmlFor="password"></label>
                 <input onChange={passwordHandler} type="password" placeholder="Password"/> <br />
                 
-                <input className="sub-btn" type="submit" value="Login"/> <br />
+                <input  className="sub-btn" type="submit" value="Login"/> <br />
                 {
                 user.email?<span className="text-success">{success}</span>
                 :
@@ -93,7 +96,7 @@ const Login = () => {
              <p className="new-accunt-sugg">Haven't account? please  Create an Account<Link to="/Registration" className="signup-btn">Signup</Link></p>
                 <h2 className="mt-4 pt-4">--------------or--------------</h2>
 
-            <button className="provider" onClick={googleLoginHandler}> Login With <i className="fab fa-google text-danger fs-4"></i>oogle</button> <br />
+            <button className="provider" onClick={googleRedirectLogin}> Login With <i className="fab fa-google text-danger fs-4"></i>oogle</button> <br />
           
         </div>
     );
