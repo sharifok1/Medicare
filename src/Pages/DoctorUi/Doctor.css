@@ -27,6 +27,12 @@
 .card-width:hover::after {
     transform: scaleY(1);
 }
+.doctor-icon{
+    transition: .5s;
+}
+.card-width:hover .doctor-icon{
+    transform: rotate(360deg);
+}
 
 @media only screen and (max-width:688px){
     .card-width{

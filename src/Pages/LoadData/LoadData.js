@@ -20,7 +20,7 @@ const LoadData = () => {
     
      
     return (
-        <div>
+        <div >
             <div className='container mt-5'>
             <Row sm={1} className={Container}>
                 <Col lg={8}>
@@ -40,7 +40,6 @@ const LoadData = () => {
             
             </Row>
         </div>
-
             <footer className="foter-style">
                 <Row>
                     <Col md={5}>

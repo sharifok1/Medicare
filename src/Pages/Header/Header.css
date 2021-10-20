@@ -14,6 +14,9 @@
     padding-top: 80px;
     display: block;
 }
+.heading{
+    font-family: 'Abril Fatface', cursive;
+}
 .logOut{
     border-radius: 50%;
     font-size: 25;
@@ -25,4 +28,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.logOut-icon{
+    transition: .2s;
+}
+.logOut-icon:hover{
+  transform: rotate(180deg);
+  padding: 5px;
 }

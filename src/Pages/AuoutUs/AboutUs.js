@@ -7,9 +7,9 @@ import './About.css'
 
 const AboutUs = () => {
     return (
-        <div >
+        <div>
            <div className="container">
-           <Row >
+           <Row>
            <Col md={6} className="text-start mt-5">
                <h4>We provided</h4>
                  <h2>Total Helth Care</h2>
@@ -42,11 +42,10 @@ const AboutUs = () => {
                 <h1 className="text-primary"><FontAwesomeIcon icon={faFirstAid}/></h1>
                 <h3>Responsibility</h3>
                 <p>We provide a vast range of medical services, so every person could have the opportunity to receive high-quality medical help</p>
-                </Col>
-                
+                </Col>             
             </Row>
         </div>
-           <div>
+           <div >
            <footer className="foter-style">
                 <Row>
                     <Col md={5}>
@@ -61,7 +60,7 @@ const AboutUs = () => {
                         <p>Terms & Conditions</p>
                         <p>Privacy Policy</p>
                     </Col>
-                    <Col md={4}><h4>Pay With</h4>
+                    <Col md={4} className="m-0 p-0"><h4>Pay With</h4>
                         <img className="img-fluid payment-card" src="https://utshobbd.com/wp-content/uploads/2019/12/payment.jpg" alt="" />
                     </Col>
                     

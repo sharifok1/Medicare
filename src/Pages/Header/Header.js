@@ -9,7 +9,7 @@ const Header = () => {
     
     const{user,logOut}=UseFirebase();
     return (
-        <div>
+        <div className="heading-page">
             {/* navbar///================ */}
             <Navbar collapseOnSelect expand="lg"  bg="dark" variant="dark" fixed="top">
               <Container>
@@ -23,7 +23,7 @@ const Header = () => {
                         {
                         user.displayName?<Navbar.Text>
                             {user.displayName}
-                            <button className='ms-2 bg-warning logOut' onClick={logOut}><i className="fas fa-sign-out-alt"></i></button>
+                            <button className='ms-2 bg-warning logOut' onClick={logOut}><i className="fas fa-sign-out-alt logOut-icon"></i></button>
                           </Navbar.Text>
                           :
                             <Nav.Link as={HashLink} to="/Login">Login</Nav.Link>
@@ -35,16 +35,18 @@ const Header = () => {
             </Navbar>
 
             {/* baner======================= */}
-            <div className="banner row " >
+            < div className="">
+              <div className="banner row">
                 <div className="col-md-6 col-sm-4">
 
                 </div>
 
-                <div className="baner-txt col-md-6 col-sm-8">
+                <div className="baner-txt col-md-6 col-sm-8 ">
                 <h3>Your Health is our priority</h3>
-                <h1>MediCare Helth Service</h1>
+                <h1 className="heading">MediCare Helth Service</h1>
                 <h5>It is the great opportunity to receive high-Quality medical help</h5>
                 </div>
+            </div>
             </div>
         </div>
     );

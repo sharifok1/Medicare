@@ -1,3 +1,4 @@
+
 .seeMore{
     border-radius: 10px;
     padding: 5px;
@@ -9,4 +10,8 @@
 }
 .seeMore:hover{
     background-color: rgb(224, 119, 34); 
+}
+.foter-style{
+    padding:20px;
+    /* margin: 12px; */
 }

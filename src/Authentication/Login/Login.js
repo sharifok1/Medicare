@@ -36,17 +36,15 @@ const Login = () => {
       setIsloading(true)
       passworLoginHndler()
       .then((result) => {
-        const user = result.user;
-        // setUser({user});
         history.push(Redirect)
+        const user = result.user;
+        setUser({user});
        setSuccess('Successfully loged in')
      }).finally(()=>{ setIsloading(false)})
       .catch((error) => {
       setError(error.message)
         });
     }
-
-
 
     // ------------------loginHandler======================
    const passworLoginHndler=(e)=>{

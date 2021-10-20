@@ -14,8 +14,8 @@ const Doctor = ({doctorData}) => {
                 <Card.Body className="doctor-profile">
                 <Card.Title>{name}</Card.Title>
                 <Card.Text >
-                    <p><FontAwesomeIcon icon={faMobileAlt}/> {phone}</p>
-                    <p><FontAwesomeIcon icon={faEnvelope}/> {email}</p>
+                    <p><FontAwesomeIcon className="doctor-icon" icon={faMobileAlt}/> {phone}</p>
+                    <p><FontAwesomeIcon className="doctor-icon" icon={faEnvelope}/> {email}</p>
                 </Card.Text>
                 </Card.Body>
             </Card>
