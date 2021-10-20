@@ -33,17 +33,17 @@ const Login = () => {
     const Redirect = location.state?.from || '/Home';
     const passwordRedirectLogin=(e)=>{
       e.preventDefault()
-      setIsloading(true)
       passworLoginHndler()
       .then((result) => {
-        history.push(Redirect)
         const user = result.user;
-        setUser({user});
+        setUser(user);
+        history.push(Redirect)
        setSuccess('Successfully loged in')
-     }).finally(()=>{ setIsloading(false)})
-      .catch((error) => {
-      setError(error.message)
-        });
+     })
+     .catch((error)=>{
+       const message =error.message;
+       setError(message);
+     });
     }
 
     // ------------------loginHandler======================
