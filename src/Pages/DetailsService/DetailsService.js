@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -6,10 +6,9 @@ import fakeData from "../../Utilities/fakeData";
 const DetailsService = () => {
     
     const {serviceId}=useParams();
-    console.log(fakeData);
+  
    
     const itemsId = fakeData.find((s)=>s.id===parseInt(serviceId));
-    console.log(itemsId)
     const {name,img,sortDes}=itemsId;
    
     return (

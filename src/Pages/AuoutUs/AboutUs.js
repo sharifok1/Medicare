@@ -18,7 +18,7 @@ const AboutUs = () => {
                      We do our best to help you and provide the highest level of health care.
                 </p>
                     <h6>We do our best to help you and provide the highest level of health care.</h6>
-                   <Link to="/LoadData"> <button className="seeMore">See Our Services</button></Link>
+                   <Link to="/Home"> <button className="seeMore">See Our Services</button></Link>
                </Col>
                <Col md={6} className="mt-5 pt-5" >
                    <img className="img-fluid" src="https://image.freepik.com/free-photo/female-doctor-holding-out-hand-isolated-white_186202-5046.jpg" alt="" />

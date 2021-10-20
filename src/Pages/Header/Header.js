@@ -4,7 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import UseFirebase from '../../Hooks/UseFirebase';
 import { HashLink } from 'react-router-hash-link';
 
-const Header = ({users}) => {
+const Header = () => {
     // const {users}=props;
     
     const{user,logOut}=UseFirebase();
@@ -23,7 +23,7 @@ const Header = ({users}) => {
                         {
                         user.displayName?<Navbar.Text>
                             {user.displayName}
-                            <button className='ms-2 bg-warning logOut' onClick={logOut}><i class="fas fa-sign-out-alt"></i></button>
+                            <button className='ms-2 bg-warning logOut' onClick={logOut}><i className="fas fa-sign-out-alt"></i></button>
                           </Navbar.Text>
                           :
                             <Nav.Link as={HashLink} to="/Login">Login</Nav.Link>
