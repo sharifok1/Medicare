@@ -8,6 +8,7 @@ This project about Medical Service Center-
 I included in this project are-
 
 - Descrive project service
+- Semantic Coading
 - implementation firebase authentication system
 - Provided All Doctors 
 - Included About section and descrive activites
