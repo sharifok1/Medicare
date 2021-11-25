@@ -10,7 +10,7 @@ const Notfound = () => {
                 trying to access
             </h3>
             <p>
-            <Link to="/LoadData">
+            <Link to="/Home">
             <button className="btn btn-primary go-to-home">Go to Home</button>
             </Link>
             </p>

@@ -11,7 +11,7 @@ I included in this project are-
 - implementation firebase authentication system
 - Provided All Doctors 
 - Included About section and descrive activites
-- Included Facebook authentication
+
 
 ## Project live site link
  https://sharp-lamarr-05486d.netlify.app/
