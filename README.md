@@ -13,6 +13,12 @@ I included in this project are-
 - Provided All Doctors 
 - Included About section and descrive activites
 
+## Technology used
+- HTML, Semantig tag, CSS
+- Bootstrap
+- Javascript, React , Json, Context API, React router dom
+- Firbase
+
 
 ## Project live site link
  https://sharp-lamarr-05486d.netlify.app/
